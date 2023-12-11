@@ -30,8 +30,10 @@ let turn=0;
     box.disabled = true;
     count++
     if (count===9){
+      count=0;
       msg.innerText= `The Game is draw` 
       msgContainer.classList.remove('hide');
+      
     }
     checkWinner();
   })
@@ -40,6 +42,7 @@ let turn=0;
 
 const resetGame =()=>{
   turn=0;
+  count=0;
   enableBoxes();
   msgContainer.classList.add('hide');
 }
@@ -57,6 +60,7 @@ const disableBtn= ()=>{
   }
 }
 const showWinner= (winner)=>{
+  count=0;
   msg.innerText= `Winner is ${winner}` 
   msgContainer.classList.remove('hide');
   
